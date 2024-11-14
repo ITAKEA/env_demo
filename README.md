@@ -19,12 +19,10 @@ A simple Flask microservice that serves a "Hello World" message from a SQLite da
 - SQLite3: Database (built into Python)
 
 ## Environment Variables
-
-Configure these in the `.env` file:
-```
-GREETING_TYPE=development
-DB_PATH=greetings.db
-```
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `GREETING_TYPE` | No | default | Type of greeting to return in response |
+| `DB_PATH` | No | greetings.db | Path to SQLite database file |
 
 ## API Endpoint
 
