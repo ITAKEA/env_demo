@@ -23,6 +23,7 @@ A simple Flask microservice that serves a "Hello World" message from a SQLite da
 |----------|----------|---------|-------------|
 | `GREETING_TYPE` | No | default | Type of greeting to return in response |
 | `DB_PATH` | No | greetings.db | Path to SQLite database file |
+| `SERVICE_URL` | No | http://example.com | URL of the service |
 
 ## API Endpoint
 
@@ -31,12 +32,14 @@ A simple Flask microservice that serves a "Hello World" message from a SQLite da
 Returns a JSON response with:
 - `message`: Hello World message from the database
 - `greeting_type`: Value from GREETING_TYPE environment variable
+- `service_url`: Value from SERVICE_URL environment variable
 
 Example response:
 ```json
 {
     "message": "Hello, World!",
-    "greeting_type": "development"
+    "greeting_type": "development",
+    "service_url": "http://localhost:8080"
 }
 ```
 
