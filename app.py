@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 # Indlæs miljøvariabler fra .env fil
 load_dotenv()
 
+# comment
+
 app = Flask(__name__)
 
 # Hent miljøvariabler med standardværdier
