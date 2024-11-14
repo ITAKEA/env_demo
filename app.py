@@ -11,6 +11,7 @@ app = Flask(__name__)
 # Hent miljøvariabler med standardværdier
 GREETING_TYPE = os.getenv('GREETING_TYPE', 'default')
 DB_PATH = os.getenv('DB_PATH', 'greetings.db')
+SERVICE_URL = os.getenv('SERVICE_URL', 'http://example.com')
 
 def get_message():
     # Opret database og tabel hvis de ikke findes
@@ -40,7 +41,8 @@ def get_message():
 def hello_world():
     return {
         'message': get_message(),
-        'greeting_type': GREETING_TYPE
+        'greeting_type': GREETING_TYPE,
+        'service_url': SERVICE_URL
     }
 
 if __name__ == '__main__':
