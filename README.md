@@ -18,6 +18,34 @@ A simple Flask microservice that serves a "Hello World" message from a SQLite da
 - Python-dotenv: Environment variable management
 - SQLite3: Database (built into Python)
 
+## Docker Setup
+
+### Building the Image
+To build the Docker image, run the following command in the project directory:
+```bash
+docker build -t hello-world-service .
+```
+
+### Running the Container
+To run the container with default environment variables:
+```bash
+docker run -d -p 8080:80 hello-world-service
+```
+
+To run with custom environment variables:
+```bash
+docker run -d -p 8080:80 \
+  -e GREETING_TYPE=production \
+  -e DB_PATH=/home/database.db \
+  -e SERVICE_URL=http://myservice.com \
+  -v $(pwd):/home \
+  hello-world-service
+```
+
+Note: The volume mount (-v) is needed if you want to persist the SQLite database file outside the container.
+
+The service will be available at http://localhost:8080
+
 ## Environment Variables
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
